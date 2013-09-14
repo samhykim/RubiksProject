@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en" ng-app="rubiks">
+    <head>
+       <meta charset="utf-8">
+       <title>Angular Project</title>
+       <link rel="stylesheet" href="css/app.css">
+       <link rel="stylesheet" href="css/bootstrap.css">
+       <link rel="stylesheet" href="css/css3.css" media="screen">
+       <link rel="stylesheet" href="css/rotate.css">
+
+       <!-- Tutorial -->
+       <link rel="stylesheet" href="tutorial/plugins/css/jquery.walkthrough.css">
+    
+
+       <script src="lib/cdn/jquery-2.0.3.js"></script>
+       <script src="lib/cdn/bootstrap-2.3.2.js"></script>
+       <script src="lib/cdn/angular-1.1.5.js"></script>
+       <script src="lib/cdn/angular-strap.js"></script>
+       <script src="lib/angular/angular-resource.js"></script>
+       <script src="js/app.js"></script>
+       <script src="js/controllers.js"></script>
+       <script src="js/filters.js"></script>
+       <script src="js/services.js"></script>
+       <script src="js/directives.js"></script>
+       <script src="js/utils.js"></script>
+       <script src="js/rotate-box.js"></script>
+       
+
+       <script type="text/javascript" src="tutorial/plugins/jquery.pagewalkthrough-1.1.0.js"></script>
+       <script type="text/javascript" src="tutorial/example/page.js"></script>
+
+    </head>
+    <body>
+       <div class="navbar">
+            <div class="navbar-inner">
+                  <a href="/app/index.html#/main" class="logo">
+                      <img src="/app/img/rubiks_logo.jpg" class="rubiks retina">
+                  </a>     
+            </div>
+        </div>
+        <div class="left-menu" ng-controller="MainController">
+            <ul class="nav">
+                <li ng-class="{active: routeIs('/interact')}"
+                    class="first-project"
+                    ng-click="$location.path('/interact')">
+                    <img src="/app/img/main/cube.jpeg" class="menu-img">
+                    <span>Interact</span></li>
+                </li>
+                <li ng-class="{active: routeIs('/records')}"
+                    ng-click="$location.path('/records')">
+                     <img src="/app/img/main/calendar.jpg" class="menu-img">
+                    <span>Records</span>
+                </li>
+                <li ng-class="{active: routeIs('/tutorial')}"
+                    ng-click="$location.path('/tutorial')">
+                     <img src="/app/img/main/paper.gif" class="menu-img">
+                    <span>Learn To Solve</span>
+                </li>
+
+            </ul>
+        </div>
+        <div id="tour2" class="left-menu-invisible"></div>        
+        <br>
+        <ze-status class="general-alert"></ze-status>
+        <br>
+        <br>
+
+        <div class="content-right" ng-view></div>
+        <div ng-controller="MainController" 
+             class="content-right"
+             ng-show="$location.path() == '/interact'">
+            <section class="container">
+              <div id="cube" class="show-front">
+                <figure class="front">1</figure>
+                <figure class="back">2</figure>
+                <figure class="right">3</figure>
+                <figure class="left">4</figure>
+                <figure class="top">5</figure>
+                <figure class="bottom">6</figure>
+              </div>
+            </section>
+
+            <section id="options">
+
+            <p id="show-buttons">
+              <button class="show-front btn">Show 1</button>
+              <button class="show-back btn">Show 2</button>
+              <button class="show-right btn">Show 3</button>
+              <button class="show-left btn">Show 4</button>
+              <button class="show-top btn">Show 5</button>
+              <button class="show-bottom btn">Show 6</button>
+            </p>
+
+            <p>
+              <button class="btn" id="toggle-backface-visibility">Toggle Backface Visibility</button>
+            </p>
+            </section>
+        </div>
+
+        <br>
+        <br>
+        <footer>
+          <div class="content-center">
+             If you have any comments or concerns, contact <a href="mailto:samhykim@gmail.com">samhykim@gmail.com</a> - Thanks!
+          </div>            
+        </footer>
+        <ze-walkthrough id="walkthrough"><ze-walkthrough>
+    </body>
+</html>
