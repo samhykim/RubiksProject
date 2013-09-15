@@ -21,7 +21,7 @@ But please take a look at the project.
 
 Instructions on how to open the project
 
-1. First copy this repo into your local machine. git clone https://github.com/samhykim/AngularProject#angularproject
+1. First copy this repo into your local machine. git clone https://github.com/samhykim/RubiksProject
 
 2. cd into that directory, rubiksproject
 
